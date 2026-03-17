@@ -28,10 +28,10 @@ Prepariamo una card per ciascun attore/attrice, mostrandone le seguenti informaz
 ## MILESTONE 3
 
 Mostriamo in pagina una card per ciascun attore, con grafica a piacimento!
-<br><br>
+<br>
 
----
----
+*Screenshot esempio*
+![image](public/cast_image.png)
 
 ### BONUS 1 ☺️
 
