@@ -34,8 +34,8 @@ header {
 
   div {
     position: relative;
-  width: 100%;
-  padding: 0 4rem;
+    width: 100%;
+    padding: 0 4rem;
   }
 
   h2 {
@@ -47,14 +47,19 @@ header {
     right: 3rem;
     right: 0;
     z-index: 10;
-    
+
   }
 }
 
 .container {
   margin: 0 auto;
   padding-top: 1.5rem;
-  ;
+
+  h3 {
+    color: bisque;
+    font-size: 2.5rem;
+    margin: 2.5rem 0 1.5rem 0;
+  }
 }
 
 .card_deck {
@@ -69,11 +74,13 @@ header {
     color: #070841;
     padding: 1.5rem;
     padding-bottom: 0;
+    margin-bottom: 1.5rem;
     font-size: 1rem;
 
     h3 {
       color: #070841;
-      font-size: 2.5rem;
+      /* 
+      font-size: 2.5rem; */
 
     }
 

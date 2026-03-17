@@ -3,20 +3,22 @@ import { useEffect, useState } from "react";
 
 function App() {
 
-  /* const attriciApi = 'https://lanciweb.github.io/demo/api/actresses/'; */
+  const attriciApi = 'https://lanciweb.github.io/demo/api/actresses/';
+  const [attrici, setAttrici] = useState([]);
   const attoriApi = 'https://lanciweb.github.io/demo/api/actors/';
   const [attori, setAttori] = useState([]);
 
-  /*   fetch(attriciApi)
-    .then(res => res.json())
-    .then(attrici => {
-      console.log(attrici);
-      
-    })
-    .catch(error => {
-      console.error(error);
-    }) */
-
+  function fetchAttrici() {
+    fetch(attriciApi)
+      .then(res => res.json())
+      .then(attrici => {
+        console.log(attrici);
+        setAttrici(attrici);
+      })
+      .catch(error => {
+        console.error(error);
+      })
+  }
 
   function fetchAttori() {
     fetch(attoriApi)
@@ -31,6 +33,10 @@ function App() {
   }
 
   useEffect(fetchAttori, []);
+  useEffect(fetchAttrici, []);
+
+
+
 
 
   return (
@@ -44,8 +50,36 @@ function App() {
 
       <main>
         <div className="container">
-          <div className="card_deck">
 
+          <h3>Actresses</h3>
+          <div className="card_deck">
+            {attrici.map((attrice) => (
+              <div className="card col-sm-6 col-md-4 col-lg-3" key={attrice.id}>
+                <div className="card-body">
+                  <img src={attrice.image} alt={attrice.name} />
+                  <div className="someInfo">
+                    <div className="bioInfo">
+                      <div>{attrice.birth_year}</div>
+                      <div>{attrice.nationality}</div>
+                    </div>
+                    <div className="awardsInfo" >
+                      {attrice.awards.map((award) => {
+                        const premio = award;
+                        return (<div key={award}>{premio}</div>)
+                      })}
+                    </div>
+                  </div>
+                  <h3 className="card-title">{attrice.name}</h3>
+                  <div className="card-text">
+                    <p>{attrice.biography}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <h3>Actors</h3>
+          <div className="card_deck">
             {attori.map((attore) => (
               <div className="card col-sm-6 col-md-4 col-lg-3" key={attore.id}>
                 <div className="card-body">
@@ -69,7 +103,6 @@ function App() {
                 </div>
               </div>
             ))}
-
           </div>
 
         </div>
