@@ -35,23 +35,51 @@ function App() {
 
   return (
     <>
-      {attori.map((attore) => (
-        <div className="card" key={attore.id}>
-          <img className="card-img-top" src={attore.image} alt={attore.name} />
-          <div className="card-body">
-            <h4 className="card-title">{attore.name}</h4>
-            <div className="card-text">
-              <p>{attore.biography}</p>
-              <div>📅{attore.birth_year}</div>
-              <div>🌍{attore.nationality}</div>
-              {attore.awards.map((award) => {
-                const premio = award;
-                return (<div key={award}>🏆 {premio}</div>)
-              })}
-            </div>
-          </div>
+      <header>
+        <div>
+          <h1>They mov <span>i</span>e you</h1>
+          <h2>Hall of fame</h2>
         </div>
-      ))}
+      </header>
+
+      <main>
+        <div className="container">
+          <div className="card_deck">
+
+            {attori.map((attore) => (
+              <div className="card col-sm-6 col-md-4 col-lg-3" key={attore.id}>
+                <div className="card-body">
+                  <img src={attore.image} alt={attore.name} />
+                  <div className="someInfo">
+                    <div className="bioInfo">
+                      <div>{attore.birth_year}</div>
+                      <div>{attore.nationality}</div>
+                    </div>
+                    <div className="awardsInfo" >
+                      {attore.awards.map((award) => {
+                        const premio = award;
+                        return (<div key={award}>{premio}</div>)
+                      })}
+                    </div>
+                  </div>
+                  <h3 className="card-title">{attore.name}</h3>
+                  <div className="card-text">
+                    <p>{attore.biography}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+
+          </div>
+
+        </div>
+      </main>
+
+      <footer>
+        <div>
+          They movie you <small>&hearts;</small> <span>Fr4v</span>
+        </div>
+      </footer>
     </>
 
   )

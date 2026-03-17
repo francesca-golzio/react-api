@@ -1,0 +1,136 @@
+@import url('bootstrap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+
+
+h1,
+h2,
+h3 {
+  font-family: 'MonteCarlo', cursive;
+}
+
+body {
+  background-color: #5b6984;
+  font-family: 'Cutive Mono', monospace;
+
+}
+
+header {
+  background-color: #020223;
+  color: #f4b15e;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+
+
+  h1 {
+    font-size: 4rem;
+
+    span {
+      color: #6175e9;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: 2.5rem;
+    }
+  }
+
+  div {
+    position: relative;
+  width: 100%;
+  padding: 0 4rem;
+  }
+
+  h2 {
+
+    color: #6175e9;
+    font-size: 2rem;
+    position: absolute;
+    bottom: 3rem;
+    right: 3rem;
+    right: 0;
+    z-index: 10;
+    
+  }
+}
+
+.container {
+  margin: 0 auto;
+  padding-top: 1.5rem;
+  ;
+}
+
+.card_deck {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+
+  .card {
+    text-align: center;
+    background-color: bisque;
+    color: #070841;
+    padding: 1.5rem;
+    padding-bottom: 0;
+    font-size: 1rem;
+
+    h3 {
+      color: #070841;
+      font-size: 2.5rem;
+
+    }
+
+    div.someInfo {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      font-size: small;
+      width: 100%;
+
+      & div.bioInfo {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+
+      }
+
+      & div.awardsInfo {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        margin-bottom: 1.5rem;
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+
+    img {
+      border-radius: 45% 55% 65% 45% / 45% 35% 60% 70%;
+      /* visto su Instagram 👆 tempo fa, volevo provare */
+      max-width: 80%;
+      margin-bottom: 1.5rem;
+      aspect-ratio: 1 / 1.1;
+      object-fit: cover;
+      object-position: top;
+    }
+
+  }
+
+
+}
+
+footer {
+  background-color: #020223;
+  color: #6175e9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  margin-top: 2rem;
+
+  span {
+    font-family: 'MonteCarlo', cursive;
+    font-size: 1.5rem;
+    font-style: italic;
+    text-align: center;
+  }
+}
